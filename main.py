@@ -70,7 +70,7 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=443,
         reload=True,
-        ssl_keyfile=os.path.join(certs_dir, "private.key"),
-        ssl_certfile=os.path.join(certs_dir, "server.crt"),
-        ssl_ca_certs=os.path.join(certs_dir, "root.crt")
+        # ssl_keyfile=os.path.join(certs_dir, "private.key"),
+        # ssl_certfile=os.path.join(certs_dir, "server.crt"),
+        # ssl_ca_certs=os.path.join(certs_dir, "root.crt")
     )
