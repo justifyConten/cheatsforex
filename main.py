@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
@@ -21,6 +22,10 @@ model = genai.GenerativeModel(
 )
 
 app = FastAPI(title="Gemini Clipboard Helper API") 
+
+@app.get("/", response_class=FileResponse)
+async def read_root():
+    return "index.html"
 
 app.add_middleware(
     CORSMiddleware,

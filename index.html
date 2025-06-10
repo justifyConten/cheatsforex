@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoVibeDev Helper API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Code Pro', monospace;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            background-image: linear-gradient(45deg, #1f2937 25%, transparent 25%), linear-gradient(-45deg, #1f2937 25%, transparent 25%);
+            background-size: 2em 2em;
+            background-position: 0 0, 1em 1em;
+        }
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: rgba(26, 26, 26, 0.9);
+            border: 1px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.1);
+        }
+        h1, h2 {
+            color: #00ff88;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 10px;
+            text-shadow: 0 0 5px #00ff88;
+        }
+        h3 {
+            color: #00bfff;
+        }
+        code {
+            background-color: #333;
+            color: #ff6347;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        strong {
+            color: #00ff88;
+        }
+        .disclaimer {
+            background-color: rgba(255, 235, 59, 0.1);
+            border-left: 4px solid #ffeb3b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #ffeb3b;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9em;
+            color: #888;
+        }
+        footer a {
+            color: #00bfff;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        footer a:hover {
+            color: #00ff88;
+            text-shadow: 0 0 5px #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать в NoVibeDev Helper API</h1>
+        <p>Этот проект — ваш личный ассистент, работающий на базе Google Gemini и предназначенный для молниеносного получения ответов.</p>
+
+        <div class="disclaimer">
+            <h2>Основное предназначение</h2>
+            <p>Проект был разработан с мыслью о студентах и всех, кому может понадобиться быстрый и незаметный доступ к информации во время... <strong>ответственных мероприятий</strong>. Если на вашем компьютере во время экзамена есть доступ в интернет, этот инструмент станет вашим незаменимым помощником. Просто скопируйте вопрос — и ответ появится в буфере обмена. Используйте с умом и на свой страх и риск!</p>
+        </div>
+
+        <h2>Принцип работы</h2>
+        <p>Система создана для упрощения работы с моделью Google Gemini. Вы копируете любой текст, и клиентское приложение автоматически отправляет его на сервер, получает ответ от нейросети и помещает его обратно в ваш буфер обмена.</p>
+
+        <h2>Компоненты системы</h2>
+        <h3>1. Сервер (<code>main.py</code>)</h3>
+        <ul>
+            <li>Принимает POST-запросы на эндпоинт <code>/get_answer</code>.</li>
+            <li>Обращается к API Google Gemini для обработки текста.</li>
+            <li>Возвращает сгенерированный ответ.</li>
+        </ul>
+
+        <h3>2. Клиент (<code>client.py</code>)</h3>
+        <ul>
+            <li>Постоянно отслеживает буфер обмена.</li>
+            <li>При обнаружении нового текста отправляет его на сервер.</li>
+            <li>Получает ответ и заменяет им содержимое буфера обмена.</li>
+            <li>Мгновенно закрывается по нажатию клавиши <strong>F4</strong>.</li>
+        </ul>
+
+        <footer>
+            <p>&copy; 2025 NoVibeDev</p>
+            <p>
+                <a href="https://github.com/justifyConten/cheatsforex" target="_blank">[ Репозиторий сервера ]</a> | 
+                <a href="https://github.com/justifyConten/cheatsforex_client" target="_blank">[ Репозиторий клиента ]</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
